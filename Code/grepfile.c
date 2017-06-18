@@ -38,6 +38,7 @@ int **fetch_datafile(int *max_node)
 			fscanf(fptr, "%d ", &dst_node);
 		}
 	}
+	fclose(fptr);
         node_Array = (int **)malloc((*max_node) * sizeof(int *));
         for (src_node=0; src_node<= *max_node; src_node++)
         {
@@ -50,6 +51,5 @@ int **fetch_datafile(int *max_node)
               node_Array[src_node][dst_node] = node[src_node][dst_node];
           }
         }
-	fclose(fptr);
         return node_Array;
 }
